@@ -1,14 +1,178 @@
 <!DOCTYPE html>
-<html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><link href="login.css" rel="stylesheet" type="text/css" /><title>
+	Ace Therapy | Welcome
+</title>
+    <style>
+        .parta {
+            /* display: none; */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .partb {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%;
+        }
+
+        .center {
+            align-content: center;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+    </style>
+
+
+
+</head>
+
+
+
+
+
+
 <body>
+    <form method="post" action="./" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="HkDzZgGprMVNGqYfJEeJucuFi9Pt/MRPkb3UIQOtCwRk+0mL2+PPc2SJnsHNrVVVK44tRdYRg2CZ72dsenUbstKcimKX5OlPiY+8Fk+uV1E=" />
+</div>
 
-<h2>My First JavaScript</h2>
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
 
-<button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
-Click me to display Date and Time.</button>
 
-<p id="demo"></p>
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZC_LZBsOYMPpe8T-VsdtvZs9d4M6myTFaXk4CeBCcIld6HF9JbbojnfE3d_jPWauGw2&amp;t=636501063124472905" type="text/javascript"></script>
 
+
+<script src="/WebResource.axd?d=x2nkrMJGXkMELz33nwnakL6OfgHDrDI5Kc83dnxGROBxW5BJDPwvn0fpx4b5NAWDrOZTlVwug51Bpl3hTb38wNCm85Bs0SZeFCu0O-r-sQg1&amp;t=636501063124472905" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="8/RUYqyMBl+ELMZRoShcRsNdcQiobT7z0fAUorLKTuIGEfHI0u9frG9PlDg/SJxLQAZFtRhMykC4k6ZbabjhAoXHhA6V3GCLcTVA4zc4FDDvlDVB6dlrN6CWoj823uZCDpTD8a9xqfoM3xC7dv8UCkEjs2ln7ZuIGB5KXV2tghSpJoVXhIKWsknY48igw7hm" />
+</div>
+        
+            <img src="images/ACEBanner.jpg" alt="logo" style="height: auto; width: auto; margin: 40px auto; display: block; max-width: 100%;" />
+        <div class="login">
+            <div class="login-screen">
+
+
+                <div class="app-title">
+                    <h1>Login</h1>
+                </div>
+
+                <div class="login-form">
+                    <div class="control-group">
+
+                        <input name="txtUsername" type="text" id="txtUsername" class="login-field" placeholder="Username" />
+                        <span id="RequiredFieldValidator1" style="color:Red;display:none;">Please Enter a Username.</span>
+                    </div>
+                    <br />
+                    <div class="control-group">
+                        <input name="txtPassword" type="password" id="txtPassword" class="login-field" placeholder="Password" />
+                        <span id="RequiredFieldValidator2" style="color:Red;display:none;">Please enter a password.</span>
+                        <span id="lblStatus"></span>
+                    </div>
+                    <br />
+                    <input type="submit" name="btnLogin" value="Login" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;btnLogin&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="btnLogin" class="btn" />
+
+                    <br />
+                    <input type="submit" name="btnResetPassword" value="Forgot password" id="btnResetPassword" class="btn" />
+                </div>
+
+            </div>
+        </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("RequiredFieldValidator1"), document.getElementById("RequiredFieldValidator2"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var RequiredFieldValidator1 = document.all ? document.all["RequiredFieldValidator1"] : document.getElementById("RequiredFieldValidator1");
+RequiredFieldValidator1.controltovalidate = "txtUsername";
+RequiredFieldValidator1.errormessage = "Please Enter a Username.";
+RequiredFieldValidator1.display = "Dynamic";
+RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidator1.initialvalue = "";
+var RequiredFieldValidator2 = document.all ? document.all["RequiredFieldValidator2"] : document.getElementById("RequiredFieldValidator2");
+RequiredFieldValidator2.controltovalidate = "txtPassword";
+RequiredFieldValidator2.errormessage = "Please enter a password.";
+RequiredFieldValidator2.display = "Dynamic";
+RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidator2.initialvalue = "";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</script>
+</form>
 </body>
-</html> 
+
+</html>
