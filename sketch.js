@@ -12,9 +12,9 @@ let ma;
 let maxD;
 
 function setup() {
-  createCanvas(400, 400, WEBGL);
+  createCanvas(600, 600, WEBGL);
   ma = atan(cos(QUARTER_PI));
-  maxD = dist(0, 0, 200, 200);
+  maxD = dist(0, 0, 300, 300);
 }
 
 function draw() {
@@ -29,7 +29,7 @@ function draw() {
       let d = dist(x, z, width / 2, height / 2);
       let offset = map(d, 0, maxD, -PI, PI);
       let a = angle + offset;
-      let h = floor(map(sin(a), -1, 1, 100, 300));
+      let h = floor(map(random([-1, 1]), -1, 1, 100, 300));
       translate(x - width / 2, 0, z - height / 2);
       normalMaterial();
       box(w, h, w);
