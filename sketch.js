@@ -29,11 +29,11 @@ function draw() {
       let d = dist(x, z, width / 2, height / 2);
       let offset = map(d, 0, maxD, -PI, PI);
       let a = angle + offset;
-      let h = floor(map(random([-1, 1]), -1, 1, 100, 300));
+      let h = floor(map(tan([-1, 1]), -1, 1, 100, 300));
       translate(x - width / 2, 0, z - height / 2);
       normalMaterial();
-      box(w, h, w);
-      //rect(x - width / 2 + w / 2, 0, w - 2, h);
+      //box(w, h, w);
+      rect(x - width / 2 + w / 2, 0, w - 2, h);
       pop();
     }
   }
