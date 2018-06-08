@@ -1,56 +1,95 @@
-// Daniel Shiffman
+﻿// Daniel Shiffman
 // http://codingtra.in
 // http://patreon.com/codingtrain
 
-// Video: https://youtu.be/H81Tdrmz2LA
+// Polynomial Regression with TensorFlow.js
+// Video: https://youtu.be/tIXDik5SGsI
 
-// Original GIF: https://beesandbombs.tumblr.com/post/149654056864/cube-wave
+let x_vals = [];
+let y_vals = [];
 
-let angle = 0;
-let w = 16;
-let ma;
-let maxD;
+let a, b, c, d;
+let dragging = false;
+
+const learningRate = 0.2;
+const optimizer = tf.train.adam(learningRate);
 
 function setup() {
-  createCanvas(600, 600, WEBGL);
-  ma = atan(cos(QUARTER_PI));
-  maxD = dist(0, 0, 300, 300);
+  createCanvas(400, 400);
+  a = tf.variable(tf.scalar(random(-1, 1)));
+  b = tf.variable(tf.scalar(random(-1, 1)));
+  c = tf.variable(tf.scalar(random(-1, 1)));
+  d = tf.variable(tf.scalar(random(-1, 1)));
 }
 
-function keepbetween(x){
-    if (x > 1) {
-        return 1;
-    }
-    if (x < -1) {
-        return -1;
-    }
-    return x;
+function loss(pred, labels) {
+  return pred.sub(labels).square().mean();
+}
+
+function predict(x) {
+  const xs = tf.tensor1d(x);
+  // y = ax^3 + bx^2 + cx + d
+  const ys = xs.pow(tf.scalar(3)).mul(a)
+    .add(xs.square().mul(b))
+    .add(xs.mul(c))
+    .add(d);
+  return ys;
+}
+
+
+function mousePressed() {
+  dragging = true;
+}
+
+function mouseReleased() {
+  dragging = false;
 }
 
 function draw() {
-  background(100);
-  ortho(-400, 400, 400, -400, 0, 1000);
-  rotateX(-ma);
-  rotateY(-QUARTER_PI)﻿
-  //if (angle < -7|| angle > 7){
-    //  angle = 0;
-    //}
-  for (let z = 0; z < height; z += w) {
-    for (let x = 0; x < width; x += w) {
-      push();
-      let d = dist(x, z, width / 2, height / 2);
-      let offset = map(d, 0, maxD, -PI, PI);
-      let a = angle + offset;
-      let h = floor(map(keepbetween(sin(a)), -1, 1, 0, 500));
-      translate(x - width / 2, 0, z - height / 2);
-      normalMaterial();
-      box(w, h, w);
-      //rect(x - width / 2 + w / 2, 0, w - 2, h);
-      pop();
-    }
+  if (dragging) {
+    let x = map(mouseX, 0, width, -1, 1);
+    let y = map(mouseY, 0, height, 1, -1);
+    x_vals.push(x);
+    y_vals.push(y);
+  } else {
+    tf.tidy(() => {
+      if (x_vals.length > 0) {
+        const ys = tf.tensor1d(y_vals);
+        optimizer.minimize(() => loss(predict(x_vals), ys));
+      }
+    });
+  }
+
+  background(0);
+
+  stroke(255);
+  strokeWeight(8);
+  for (let i = 0; i < x_vals.length; i++) {
+    let px = map(x_vals[i], -1, 1, 0, width);
+    let py = map(y_vals[i], -1, 1, height, 0);
+    point(px, py);
   }
 
 
-    angle -= 0.1;
+  const curveX = [];
+  for (let x = -1; x <= 1; x += 0.05) {
+    curveX.push(x);
+  }
 
+  const ys = tf.tidy(() => predict(curveX));
+  let curveY = ys.dataSync();
+  ys.dispose();
+
+  beginShape();
+  noFill();
+  stroke(255);
+  strokeWeight(2);
+  for (let i = 0; i < curveX.length; i++) {
+    let x = map(curveX[i], -1, 1, 0, width);
+    let y = map(curveY[i], -1, 1, height, 0);
+    vertex(x, y);
+  }
+  endShape();
+
+  // console.log(tf.memory().numTensors);
 }
