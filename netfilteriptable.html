@@ -19,11 +19,12 @@
 
 
 
-<body onload="window.alert('Welcome to Firewalls: Types and Methods')" onUnload="window.alert('Goodbye')">
+<body>
 
 <div id="wrapper">
 
    <h1>Firewalls: Types and Methods</h1>
+
    <nav>
    <ul>
 		   <li><a href="index.html">Home</a></li>
@@ -38,25 +39,30 @@
 		   <li><a href="feedbackcontact.html">Feedback</a></li>
 	</ul>
 	</nav>
-<div id="col1">
-   <h2>HomePage</h2>
-
-   <p>
-	  Welcome to Firewalls: Types and Methods.
-	  Here you will be able to read my reasearch I did on firewalls for CSC 4290.
-	  I cover the three generations of firewalls:
-   </p>
-    <ul>
-		   <li>Network Layer Firewall</li>
-		   <li>Application Layer Firewall</li>
-		   <li>Structured Firewall Query Language</li>
-	</ul>
-</div>
-<div id="col2">
-	<p>
-	Also, I cover two different methods of managing and enforcing firewall policies.
-	</p>
-</div>
+<main>
+   <h2>NetFilter/IPtable</h2>
+<p>
+    Netfilter is a framework that is part of the Linux Kernel used in conjunction with IPtable form the basis of Linux's network filtering system and allows
+    user programs to hook into the kernel. The Netfilter allows users to filter datagrams, define address translation and determine processing operations.
+    [5,9]
+</p>
+<p>
+    A simple firewall using Netfilter/IPtable design proposed by Wang et.al also includes state detection technology first proposed by the CheckPoint Company,
+    thus adding the functionality of stateful packet filters, and a logging system so system administers can detect errors. The implementation of a firewall
+    created using Netfilter/IPtable consists of 5 steps:
+</p>
+<ol>
+  <li>Configure the kernel with the proper setting to us Netfilter/IPtable.</li>
+  <li>Create a shell script to configure and start Netfilter/IPtable.</li>
+  <li>Delete any existing rules for the filter so that the new rules do not conflict with the default rules.</li>
+  <li>Change the default policies to match your security policies.</li>
+  <li>Reset and stop the firewall to refresh settings.[5,9]</li>
+</ol>
+<p>
+    Netfilter allows for the addition of new modules, so Wang et.al added a simple anti-DDoS module to have added protection without sacrificing too much
+    performance of their system.
+</p>
+   </main>
 
    <footer>
       Written and designed by Bradley Boortz<br>

@@ -19,11 +19,12 @@
 
 
 
-<body onload="window.alert('Welcome to Firewalls: Types and Methods')" onUnload="window.alert('Goodbye')">
+<body>
 
 <div id="wrapper">
 
    <h1>Firewalls: Types and Methods</h1>
+
    <nav>
    <ul>
 		   <li><a href="index.html">Home</a></li>
@@ -38,25 +39,25 @@
 		   <li><a href="feedbackcontact.html">Feedback</a></li>
 	</ul>
 	</nav>
-<div id="col1">
-   <h2>HomePage</h2>
-
-   <p>
-	  Welcome to Firewalls: Types and Methods.
-	  Here you will be able to read my reasearch I did on firewalls for CSC 4290.
-	  I cover the three generations of firewalls:
-   </p>
-    <ul>
-		   <li>Network Layer Firewall</li>
-		   <li>Application Layer Firewall</li>
-		   <li>Structured Firewall Query Language</li>
-	</ul>
-</div>
-<div id="col2">
-	<p>
-	Also, I cover two different methods of managing and enforcing firewall policies.
-	</p>
-</div>
+<main>
+   <h2>Network Layer Firwalls</h2>
+<p>
+    The earliest firewalls were basic packet filters that were defined by which level of the protocol stack that they operate at. These firewalls do not track
+    the state of a connection, the simply kept a list of trusted and untrusted sources to determine whether a packet would be received or rejected. They also
+    can utilize proxies to hide the true recipient of a packet. [8]
+</p>
+<p>
+    These firewalls were limited by the fact that IP addresses could be spoofed, so using it as the sole source of authentication is problematic. Also, writing
+    security policies for a packet filter with sender and receiver as the only information proved to be difficult. The packet filters did not track the purpose
+    of the packet or if it was part of an establish connection. A malicious user from a trusted source could send malicious information to a host as the
+    trusted source and the firewall would not catch it since these filters do not analyze what is being sent or how it is being sent, just where it is coming
+    from. [8]
+</p>
+<p>
+    Later versions of this type operated on multiple levels of the protocol stack so that if one layer was cracked, another layer might catch it. These
+    firewalls formed the basis of the next major evolution in firewalls. [8]
+</p>
+   </main>
 
    <footer>
       Written and designed by Bradley Boortz<br>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="projectstyle.css" rel="stylesheet" type="text/css">
+
+
+<head>
+	<!--[if lt IE 9]>
+	<script src="http//html5shim.googlecode.com/svn/trunkhtml5.js">
+	</script>
+	<![endif]-->
+   <title>Firewalls: Types and Methods</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scal=1.0">
+   <meta name="description" content="Firewalls Types and Methods">
+   <meta name="keywords" content="firewalls,networking,reasearch,academic,paper,essay,types,methods">
+   <meta name="author" content="Bradley Boortz">
+</head>
+
+
+
+
+<body>
+
+<div id="wrapper">
+
+   <h1>Firewalls: Types and Methods</h1>
+
+   <nav>
+   <ul>
+		   <li><a href="index.html">Home</a></li>
+		   <li><a href="briefhistory.html">Brief History</a></li>
+		   <li><a href="overview.html">Overview</a></li>
+		   <li><a href="networklayerfirewall.html">Network Layer Firewalls</a></li>
+		   <li><a href="statefulfirewall.html">Stateful Firewalls</a></li>
+		   <li><a href="applicationlayerfirewall.html">Application Layer Firewalls</a></li>
+		   <li><a href="structuredfirewallquerylanguage.html">Structured Firewall Query Language</a></li>
+		   <li><a href="netfilteriptable.html">NetFilter/IPtable</a></li>
+		   <li><a href="references.html">References</a></li>
+		   <li><a href="feedbackcontact.html">Feedback</a></li>
+	</ul>
+	</nav>
+<main>
+   <h2>Structured Firewall Query Language</h2>
+<p>
+    Structured Firewall Query Language is a proposed solution to the problem of network administrators managing a large number of firewall policies. Firewall
+    policies take the form of (predicate) -&gt; (decision), where (predicate) is a Boolean expression that takes fields of a packet as parameters and the
+    result of the decision is to accept or reject a packet. To manage a large pool of firewall policies, Liu and Gouda propose using an SQL-like database and
+    query language to store, change, and extract a firewall's policy. It is different from a relational database because instead of fields in a tuple being
+    values the will consist of ranges. The average query would take the format of: "SELECT Fi FROM f WHERE (F1 IN S1) ^ ... ^(Fd IN Sd) ^ (decision =
+    &lt;dec&gt;)" where Fi is one field, f is a firewall, and &lt;dec&gt; is accept or discard.[4,10]
+</p>
+<p>
+    Preliminary testing has indicated that a query on an acyclic directed graph representing the policies of a firewall takes 10ms. The graphs are called FDDs
+    for Firewall Decision Diagrams, and they represent the hierarchy of policies that a packet must pass to be accepted. The language has plans to support
+    union, intersect, and minus operations on returned results.[4,10]
+</p>
+<p>
+    Structured Firewall Query Language would be a tool that system administrators could us to manage firewall policies in an efficient fashion. This tool could
+    be used to improve the speed at which errors in firewall policies can be found and changes.[4,10]
+</p>
+   </main>
+
+   <footer>
+      Written and designed by Bradley Boortz<br>
+      <a href="mailto:Bradley@Boortz.com">Bradley@Boortz.com</a>
+   </footer>
+</div>
+</body>

@@ -19,11 +19,12 @@
 
 
 
-<body onload="window.alert('Welcome to Firewalls: Types and Methods')" onUnload="window.alert('Goodbye')">
+<body>
 
 <div id="wrapper">
 
    <h1>Firewalls: Types and Methods</h1>
+
    <nav>
    <ul>
 		   <li><a href="index.html">Home</a></li>
@@ -38,25 +39,24 @@
 		   <li><a href="feedbackcontact.html">Feedback</a></li>
 	</ul>
 	</nav>
-<div id="col1">
-   <h2>HomePage</h2>
-
-   <p>
-	  Welcome to Firewalls: Types and Methods.
-	  Here you will be able to read my reasearch I did on firewalls for CSC 4290.
-	  I cover the three generations of firewalls:
-   </p>
-    <ul>
-		   <li>Network Layer Firewall</li>
-		   <li>Application Layer Firewall</li>
-		   <li>Structured Firewall Query Language</li>
-	</ul>
-</div>
-<div id="col2">
-	<p>
-	Also, I cover two different methods of managing and enforcing firewall policies.
-	</p>
-</div>
+<main>
+   <h2>Application Layer Firewalls</h2>
+<p>
+    Application firewalls also called an application proxy gateway, are the most recent major evolution in firewall design. Application firewalls serve as a
+    proxy between the host and the sender, acting as a server to the host and as a client of the sender. The application firewall then examines the entire
+    contents of the package with an understanding of communication protocols that basic stateful filters do not, giving them increased flexibility.[6]
+</p>
+<p>
+    The advantages of an application firewall are an increased level of security because the client and server never directly connect and all traffic,
+    including the package payload, is thoroughly inspected for policy violations. Also, application firewall can also incorporate other features, such as
+    user-level authentication, connection logging, and data encryption.
+</p>
+<p>
+    The disadvantages of an application firewall are more time spent analyzing packets, decreasing throughput and disrupting real-time applications. Also,
+    whenever a new application or protocol is introduced, it needs to be defined in the application firewall. These factors can cause significant disruptions
+    in the throughput of large networks. [6,8]
+</p>
+   </main>
 
    <footer>
       Written and designed by Bradley Boortz<br>

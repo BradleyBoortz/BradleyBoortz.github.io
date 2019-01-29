@@ -19,11 +19,12 @@
 
 
 
-<body onload="window.alert('Welcome to Firewalls: Types and Methods')" onUnload="window.alert('Goodbye')">
+<body>
 
 <div id="wrapper">
 
    <h1>Firewalls: Types and Methods</h1>
+
    <nav>
    <ul>
 		   <li><a href="index.html">Home</a></li>
@@ -38,25 +39,21 @@
 		   <li><a href="feedbackcontact.html">Feedback</a></li>
 	</ul>
 	</nav>
-<div id="col1">
-   <h2>HomePage</h2>
-
-   <p>
-	  Welcome to Firewalls: Types and Methods.
-	  Here you will be able to read my reasearch I did on firewalls for CSC 4290.
-	  I cover the three generations of firewalls:
-   </p>
-    <ul>
-		   <li>Network Layer Firewall</li>
-		   <li>Application Layer Firewall</li>
-		   <li>Structured Firewall Query Language</li>
-	</ul>
-</div>
-<div id="col2">
-	<p>
-	Also, I cover two different methods of managing and enforcing firewall policies.
-	</p>
-</div>
+<main>
+   <h2>Stateful Firewalls</h2>
+<p>
+    Stateful packet filters were the next step in firewall technology. Firewalls of this type keep track of active connections by logging handshake messages.
+    This means the firewalls must track the context and purpose of incoming packets to determine their the nature of the packets. For example, a stateful
+    packet filter can determine if a packet is establishing a connection or transferring the bulk of the data, Stateless cannot do this since it only checks
+    the header for IP addresses.[7]
+</p>
+<p>
+    Gupta et.al, show how a stateful packet filter can be implemented using the POX python library to create a controller for a Software Defined Networking
+    tool that can detect fake packets sent from trusted sources. They tested this using the Ostinato Packet Builder tool to construct a fake packet. This
+    proves to be a major improvement in terms of security than the stateless package filters, but they are less efficient in terms of throughput since this
+    type of firewall needs to read more information from the package.[7]
+</p>
+   </main>
 
    <footer>
       Written and designed by Bradley Boortz<br>

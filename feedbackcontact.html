@@ -19,11 +19,12 @@
 
 
 
-<body onload="window.alert('Welcome to Firewalls: Types and Methods')" onUnload="window.alert('Goodbye')">
+<body>
 
 <div id="wrapper">
 
    <h1>Firewalls: Types and Methods</h1>
+
    <nav>
    <ul>
 		   <li><a href="index.html">Home</a></li>
@@ -38,25 +39,30 @@
 		   <li><a href="feedbackcontact.html">Feedback</a></li>
 	</ul>
 	</nav>
-<div id="col1">
-   <h2>HomePage</h2>
+<main>
+   <h2>References</h2>
+    <form enctype="text/plain" action="mailto:fh4548@wayne.edu">
 
-   <p>
-	  Welcome to Firewalls: Types and Methods.
-	  Here you will be able to read my reasearch I did on firewalls for CSC 4290.
-	  I cover the three generations of firewalls:
-   </p>
-    <ul>
-		   <li>Network Layer Firewall</li>
-		   <li>Application Layer Firewall</li>
-		   <li>Structured Firewall Query Language</li>
-	</ul>
-</div>
-<div id="col2">
-	<p>
-	Also, I cover two different methods of managing and enforcing firewall policies.
-	</p>
-</div>
+            <label for="first_name">First Name:</label>
+            <input type="text" name="myFName" id="myFName" required="required">
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="myLName" id="myLName" required="required">
+
+            <label for="email">E-Mail:</label>
+            <input type="text" name="myEmail" id="myEmail" required="required">
+
+            <label for="telephone">Phone:</label>
+            <input type="text" name="myPhone" id="myPhone">
+
+            <label for="comments">Comments:</label>
+            <textarea name="myComments" id="myComments" rows="2" cols="20"></textarea>
+            <input id="mySubmit" type="submit" value="Submit" required="required">
+
+         </form>
+	
+</table>
+   </main>
 
    <footer>
       Written and designed by Bradley Boortz<br>

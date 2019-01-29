@@ -3,7 +3,7 @@
 <link href="projectstyle.css" rel="stylesheet" type="text/css">
 
 
-<head>
+<head onunload="window.alert('Welcome to Firewalls: Types and Methods')">
 	<!--[if lt IE 9]>
 	<script src="http//html5shim.googlecode.com/svn/trunkhtml5.js">
 	</script>
@@ -19,11 +19,12 @@
 
 
 
-<body onload="window.alert('Welcome to Firewalls: Types and Methods')" onUnload="window.alert('Goodbye')">
+<body>
 
 <div id="wrapper">
 
    <h1>Firewalls: Types and Methods</h1>
+
    <nav>
    <ul>
 		   <li><a href="index.html">Home</a></li>
@@ -38,25 +39,18 @@
 		   <li><a href="feedbackcontact.html">Feedback</a></li>
 	</ul>
 	</nav>
-<div id="col1">
-   <h2>HomePage</h2>
+
+<main>
+   <h2>A Brief History of Firewalls</h2>
 
    <p>
-	  Welcome to Firewalls: Types and Methods.
-	  Here you will be able to read my reasearch I did on firewalls for CSC 4290.
-	  I cover the three generations of firewalls:
+   Firewalls were originally intended to help routers differentiate networks.
+   As their complexity increased, they began to filter unwanted neworking traffic from usual traffic.
+   Early pioneers of firwalls include Bill Cheswick and Steve Bellovin from AT&T Bell Labs.
+   They developed one of the first commercial network firewalls
    </p>
-    <ul>
-		   <li>Network Layer Firewall</li>
-		   <li>Application Layer Firewall</li>
-		   <li>Structured Firewall Query Language</li>
-	</ul>
-</div>
-<div id="col2">
-	<p>
-	Also, I cover two different methods of managing and enforcing firewall policies.
-	</p>
-</div>
+   <br><br><br>
+   </main>
 
    <footer>
       Written and designed by Bradley Boortz<br>
